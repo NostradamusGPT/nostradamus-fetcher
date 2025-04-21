@@ -1,0 +1,8 @@
+services:
+  - type: cron
+    name: nostradamus-fetcher
+    repo: https://github.com/NostradamusGPT/nostradamus-fetcher.git
+    schedule: "@hourly"  # oder @daily, @weekly etc.
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python fetch.py"
